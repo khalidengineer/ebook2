@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  base : '/selfstudyguide',
+  base : '/ebook2',
   plugins: [
     react(),
     VitePWA({
