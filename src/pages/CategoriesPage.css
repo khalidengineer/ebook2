@@ -1,0 +1,78 @@
+/* pages/CategoriesPage.css */
+.categories-page { padding-top: 8px; }
+.cat-container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 8px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cat-group {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.cat-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-primary);
+  transition: background var(--transition);
+}
+.cat-row:hover { background: var(--bg-card-hover); }
+
+.cat-icon { font-size: 1.4rem; flex-shrink: 0; }
+.cat-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.cat-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+}
+.cat-count { font-size: 0.75rem; color: var(--text-muted); }
+.cat-arrow {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.cat-sub-list {
+  border-top: 1px solid var(--border);
+  background: var(--bg-primary);
+}
+
+.cat-sub-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px 12px 48px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  text-align: left;
+  transition: all var(--transition);
+}
+.cat-sub-row:last-child { border-bottom: none; }
+.cat-sub-row:hover { background: var(--bg-elevated); color: var(--text-primary); }
+
+.cat-sub-dot { color: var(--accent); font-size: 1rem; flex-shrink: 0; }
+.cat-sub-name { flex: 1; }
+.cat-sub-count {
+  font-size: 0.7rem;
+  background: var(--bg-elevated);
+  padding: 2px 8px;
+  border-radius: 99px;
+  color: var(--text-muted);
+}

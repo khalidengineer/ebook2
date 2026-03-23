@@ -1,0 +1,88 @@
+/* pages/SavedPdfsPage.css */
+.saved-page { padding-top: 8px; }
+.saved-container { max-width: 768px; margin: 0 auto; padding: 8px 16px 16px; }
+
+.saved-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.saved-list { display: flex; flex-direction: column; gap: 10px; }
+
+.saved-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+}
+.saved-card:hover { background: var(--bg-card-hover); }
+
+.saved-thumb {
+  width: 60px;
+  height: 76px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-elevated);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+.saved-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+.saved-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+
+.saved-category {
+  font-size: 0.68rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.saved-title {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.saved-author { font-size: 0.75rem; color: var(--text-secondary); }
+
+.saved-meta { display: flex; align-items: center; gap: 10px; margin-top: 2px; }
+.saved-price { font-size: 0.82rem; color: var(--accent); font-weight: 600; }
+.saved-date { font-size: 0.7rem; color: var(--text-muted); }
+
+.saved-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.saved-badge { font-size: 1.2rem; opacity: 0.6; }
+
+.saved-remove {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition);
+  padding: 4px;
+}
+.saved-card:hover .saved-remove { opacity: 1; }
+.saved-remove:hover { opacity: 1 !important; }

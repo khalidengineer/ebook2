@@ -1,0 +1,90 @@
+/* pages/RecentlyViewedPage.css */
+.rv-page { padding-top: 8px; }
+.rv-container { max-width: 768px; margin: 0 auto; padding: 8px 16px 16px; }
+
+.rv-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.rv-count { font-size: 0.8rem; color: var(--text-muted); }
+.rv-clear { font-size: 0.8rem; color: var(--red); }
+.rv-clear:hover { color: var(--red); background: rgba(239,68,68,0.1); }
+
+.rv-skeletons { display: flex; flex-direction: column; gap: 10px; }
+.rv-skeleton { display: flex; gap: 14px; padding: 12px; background: var(--bg-card); border-radius: var(--radius-md); }
+
+.rv-list { display: flex; flex-direction: column; gap: 10px; }
+
+.rv-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  position: relative;
+}
+.rv-card:hover { background: var(--bg-card-hover); }
+
+.rv-thumb {
+  width: 64px;
+  height: 80px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-elevated);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+.rv-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+.rv-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+
+.rv-category {
+  font-size: 0.7rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rv-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rv-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rv-price { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
+.rv-time { font-size: 0.72rem; color: var(--text-muted); }
+
+.rv-remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--transition);
+  opacity: 0;
+}
+.rv-card:hover .rv-remove { opacity: 1; }
+.rv-remove:hover { background: var(--red); color: #fff; border-color: var(--red); }

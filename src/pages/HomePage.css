@@ -1,0 +1,39 @@
+/* pages/HomePage.css */
+.home-page { padding-bottom: calc(var(--bottom-nav-height) + 16px); }
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px 0 8px;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.home-section { padding: 0 16px; }
+
+.featured-scroll { gap: 12px; padding: 4px 4px 8px; }
+.featured-item { flex: 0 0 160px; }
+
+.section-count {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 4px;
+  background: var(--bg-elevated);
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.home-refresh {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 8px;
+}
+
+.refresh-btn { font-size: 0.85rem; }
+
+@media (min-width: 768px) {
+  .featured-item { flex: 0 0 200px; }
+}

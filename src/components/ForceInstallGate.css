@@ -1,0 +1,275 @@
+/* components/ForceInstallGate.css */
+
+/* Checking spinner (brief flash) */
+.fig-checking {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Full-screen overlay */
+.fig-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Animated background orbs */
+.fig-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.fig-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.25;
+}
+.fig-orb1 {
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, #f59e0b, transparent);
+  top: -80px; right: -80px;
+  animation: figFloat1 7s ease-in-out infinite;
+}
+.fig-orb2 {
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, #3b82f6, transparent);
+  bottom: -60px; left: -60px;
+  animation: figFloat2 9s ease-in-out infinite;
+}
+
+@keyframes figFloat1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-15px,18px)} }
+@keyframes figFloat2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(18px,-14px)} }
+
+/* Card */
+.fig-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 36px 28px 32px;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+  animation: figCardIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
+}
+
+@keyframes figCardIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* App icon */
+.fig-app-icon {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 0 20px rgba(245,158,11,0.4));
+  animation: figIconPulse 3s ease-in-out infinite;
+}
+@keyframes figIconPulse {
+  0%,100%{ filter: drop-shadow(0 0 20px rgba(245,158,11,0.3)); }
+  50%    { filter: drop-shadow(0 0 36px rgba(245,158,11,0.6)); }
+}
+
+.fig-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.fig-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: -6px;
+}
+
+.fig-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  border-radius: 99px;
+  margin: 4px 0;
+}
+
+.fig-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.7;
+}
+.fig-desc strong { color: var(--text-primary); }
+
+/* Steps (Android) */
+.fig-steps {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.fig-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.fig-step strong { color: var(--text-primary); }
+
+.fig-step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #000;
+  font-weight: 800;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+}
+
+/* Install button */
+.fig-install-btn {
+  width: 100%;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 24px rgba(245,158,11,0.35);
+  margin-top: 4px;
+}
+.fig-install-btn:hover:not(:disabled) {
+  background: #fde68a;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(245,158,11,0.45);
+}
+.fig-install-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.fig-note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Spinner inside button */
+.fig-btn-spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(0,0,0,0.3);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+/* General spinner */
+.fig-spinner {
+  width: 36px; height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Success state */
+.fig-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+}
+.fig-success-icon { font-size: 2.5rem; animation: figIconPulse 1.5s ease infinite; }
+.fig-success p { font-size: 0.95rem; color: var(--text-primary); font-weight: 500; }
+
+/* iOS guide */
+.fig-ios-guide {
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.fig-ios-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  width: 100%;
+}
+.fig-ios-step strong { color: var(--text-primary); }
+
+.fig-ios-icon {
+  width: 32px; height: 32px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  color: var(--accent);
+}
+
+.fig-ios-arrow {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.fig-ios-bottom-arrow {
+  font-size: 0.78rem;
+  color: var(--accent);
+  text-align: center;
+  animation: figBounce 1.5s ease-in-out infinite;
+  font-weight: 600;
+}
+@keyframes figBounce {
+  0%,100%{ transform: translateY(0); }
+  50%    { transform: translateY(5px); }
+}
